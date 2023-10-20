@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* background-color: #425c77; */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh; /*tinggi halaman di layar*/
+  margin: 0; /*batas ke sisi tiap sudut*/
+  display: flex; /*merubah type posisi berjajar*/
+  flex-direction: column; /*merubah posisi menjadi colomn*/
+  /* background-color: aquamarine; */
+}
+
+header.navbar-container {
+  max-width: 1200px; /*ukuran kotak navbar container*/
+  width: 100%; /*ukuran nav container*/
+  margin-inline: auto; /*memindahkan kotak ke tengah*/
+  display: flex; /*mensejajarkan gambar dan text*/
+  justify-content: space-around; /*mengubah posisi menjadi saling pojok antara foto dan text*/
+  align-items: center; /*membuat content yg ada di dalam box ke tengah*/
+  padding-block: 1rem; /*menanmbahkan jarak atas bawah content dan kotak sebanyak 1 rem*/
+  z-index: 999; /*agar content tidak tertindih oleh content lain*/
+  /* background-color: black; */
+}
+
+header.navbar-container .logo img {
+  width: 100px; /*merubah ukuran gambar*/
+}
+
+header.navbar-container .nav-list ul {
+  padding-left: 0; /*agar text tidak mempunyai jarak apapun*/
+  display: flex; /*agar tulusin menjadi bersampingan*/
+  justify-content: center; /*agar text berada di tengah kotak ul*/
+  gap: 2rem 1rem; /*mengatur jarak antar text*/
+  /* background-color: aqua; */
+}
+
+header.navbar-container .nav-list li {
+  list-style-type: none; /*menghapus icon bulet efek dari li*/
+}
+
+header.navbar-container .nav-list li a {
+  text-decoration: none; /*menghapus underline efek dari a href*/
+  font-size: 1.05rem; /*ukuran font */
+  font-weight: 500; /*mengubah ketebalan font, harus sesuai dengan yg di ambil dari google font*/
+  color: black; /*warna font*/
+  padding: 0.5rem 1.5rem; /*jarak antar text*/
+  border-radius: 999px; /*agar efek dari kotak hover jadi melengkung agak ke bulat*/
+  transition: all 0.2s ease-in-out; /*efek animasi hover*/
+  /* background-color: red; */
+}
+
+header.navbar-container .nav-list li:hover a {
+  background-color: #425c77; /*saat kursor di arah kan ke text, akan ada kotak*/
+  color: white; /*dan text akan berubah warna jadi putih*/
+}
+
+main {
+  max-width: 1200px; /*Memberikan ukuran maksimal kotak main*/
+  width: 100%; /*Membuat kotak full 100%*/
+  margin-inline: auto; /*membuat jarak kanan kiri sama, konten jadi ke tengah*/
+  padding: 2rem 4rem; /*jarak content dengan sisi kotak*/
+  flex: 1; /*agar kotak full sesuai ukuran*/
+  display: flex; /*agar konten sejajar*/
+  align-items: center; /*agar konten di tengah*/
+  /* background-color: red; */
+}
+
+main .content {
+  flex: 1; /*agar kotak full sesuai ukuran*/
+  display: flex; /*Agar content sejajar*/
+  align-items: center; /*Agar content di tengah*/
+  /* background-color: aqua; */
+}
+
+main .content .content-description {
+  flex: 1 1;
+  /* background-color: #108037; */
+}
+
+main .content .content-description .title {
+  font-size: 3.5rem; /*mengubah ukuran font*/
+  margin-block: 1rem; /*membuat jarak antar kotak*/
+}
+
+main .content .content-description p {
+  line-height: 1.7rem; /*jarak atas bawah antar text*/
+  font-size: 1.2rem; /*ukuran text*/
+}
+
+main .content .content-description button {
+  padding: 0.8rem 2.5rem; /*ukuran button atas bawah 0.8, kanan kiri 2.5*/
+  margin-block-start: 1rem; /*jarak dari bawah ke atas*/
+  text-transform: uppercase; /*Mengubah huruf jadi kapital*/
+  font-weight: 700; /*ketebalan font sesuai google font*/
+  font-size: 1rem; /*ukuran font*/
+  font-family: "Poppins", sans-serif; /*type font*/
+  color: white; /*warna font*/
+  background-color: #2d3e50; /*warna button*/
+  border: 3px solid transparent; /*garis border transparan*/
+  border-radius: 999px; /*agar setiap siku melengkung*/
+  cursor: pointer; /*agar cursor menjadi tangan*/
+  transition: all 0.5 ease-in; /*animasi*/
+}
+
+main .content .content-description button:hover {
+  border: 3px solid #2d3e50; /*perubahan border saat terkena kursor*/
+  color: #2d3e50; /*perubahan warna saat button terkena kursor*/
+  background-color: transparent; /*perubahan bc saat terkena kursor*/
+}
+
+main .content .content-image {
+  flex: 1; /*agar konten foto dan deskripsi sama besar*/
+  display: flex; /*agar sejajar*/
+}
+
+main .content .content-image img {
+  margin: auto; /*agar gambar terletak di tengah2 kotak*/
+  min-width: 250px; /*ukuran minimal gambar*/
+  width: 300px; /*merubah ukuran gambar dari uk original*/
+}
+
+/* responsive */
+/* ketikan ukuran layar 768px maka lakukan = dibawah ini */
+@media screen and (max-width: 768px) {
+  header.navbar-container {
+    flex-direction: column; /*logo akan nain ke atas dan nav akan turun ke bawah logo*/
+  }
+  header.navbar-container .nav-list ul {
+    flex-wrap: wrap; /*text navbar akan turun ke bawah jika ukuran layar turun*/
+    column-gap: 0.5rem; /*ukuran antar text*/
+  }
+  main {
+    padding: 1rem 3rem; /*jarak dengan sisi*/
+  }
+  main .content {
+    flex-direction: column; /*gambar akan turun jika layar mengeci*/
+    gap: 2rem; /*jarak gambar dengan sisi atas*/
+  }
+  main .content .content-description .title {
+    font-size: 3rem; /*merubah ukuran font title*/
+  }
+  main .content .content-description p {
+    font-size: 1rem; /*mengubah ukuran font deskripsi*/
+  }
+  main .content .content-image {
+    order: -1; /*agar gambar menjadi urutan pertama dan deskripsi di bawahnya*/
+  }
+}
